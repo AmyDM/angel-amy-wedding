@@ -62,7 +62,7 @@
 
 					<section id="por-gracia" class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
     <div class="content">
-        <h2>Por Gracia</h2>
+        <h2>Nuestra Historia Comienza</h2>
         <p class="spotlight-text">Con la bendición de Dios y de nuestros padres</p>
         <div class="parents-block">
             <p class="parents-names">Danilo y Sonia Martínez</p>
@@ -103,7 +103,7 @@
 				<section class="wrapper style1 align-center countdown-section onscroll-fade-in">
 					<div class="inner onscroll-fade-in">
 						<div class="date-photo">
-							<img src="images/gallery/thumbs/01.jpg" alt="Angel y Amy" />
+							<img src="images/sdd5.jpg" alt="Angel y Amy" />
 						</div>
 						<h2 class="sub-title">Nuestra boda comienza en...</h2>
 						<div id="countdown" class="countdown">
@@ -194,7 +194,8 @@
 
 							<form id="rsvp-form">
 								<label>¿Cuántos asistirán?</label>
-								<select id="guestCount">
+								<select id="guestCount" required>
+									<option value="" disabled selected>Selecciona una opción</option>
 									<option value="0">No podremos asistir</option>
 									<option value="1">1 persona</option>
 									<option value="2">2 personas</option>
@@ -285,7 +286,7 @@
 								</div>
 							</div>
 							<div class="contact-photo">
-								<img src="images/gallery/thumbs/01.jpg" alt="Angel y Amy" />
+								<img src="images/sdd3.jpg" alt="Angel y Amy" />
 							</div>
 						</div>
 					</section>
@@ -372,7 +373,7 @@
 				}
 
 				const select = document.getElementById("guestCount");
-				select.innerHTML = `<option value="0">No podremos asistir</option>`;
+				select.innerHTML = `<option value="" disabled selected>Selecciona una opción</option><option value="0">No podremos asistir</option>`;
 				for (let i = 1; i <= seats; i++) {
 					select.innerHTML += `<option value="${i}">${i} persona(s)</option>`;
 				}
