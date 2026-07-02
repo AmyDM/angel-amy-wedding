@@ -8635,7 +8635,7 @@ input, select, textarea {
 
 .map-buttons {
     justify-content: center;
-    gap: 1rem;
+    gap: 0.6rem;
 }
 
 .map-buttons .button {
@@ -8646,13 +8646,8 @@ input, select, textarea {
 }
 
 .countdown-section {
-    background-color: #f4f4f4; /* gris suave */
+    background-color: #ffffff;
     padding: 4rem 2rem;
-}
-
-.countdown-title {
-    font-family: 'Libre Baskerville', serif;
-    margin-bottom: 1.5rem;
 }
 
 .countdown {
@@ -8663,18 +8658,18 @@ input, select, textarea {
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(8px);
+    background: #ffffff;
     border-radius: 15px;
     padding: 1.5rem 0.8rem;
     min-width: 80px;
     text-align: center; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
+    box-shadow: 0 12px 28px rgba(18,23,44,0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .time-box:hover {
     transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(18,23,44,0.18);
 }
 
 .time-box span {
@@ -8699,7 +8694,7 @@ input, select, textarea {
     .countdown {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        gap: 1rem;
+        gap: 0.75rem;
         justify-items: center;
     }
 
@@ -8711,26 +8706,16 @@ input, select, textarea {
     .time-box span {
         font-size: 1.8rem;
     }
-
-    .countdown-title {
-        font-size: 2rem;
-        text-align: center;
-    }
 }
 
 .sub-title {
-    font-family: 'Pinyon Script', cursive; /* o la que quieras */
+    font-family: 'Libre Baskerville', serif;
     letter-spacing: 1px;
 }
 
 .dresscode-section {
-    background-color: #f4f4f4; /* gris suave */
+    background-color: #ffffff;
     padding: 4rem 2rem;
-}
-
-.dresscode-title {
-    font-family: 'Libre Baskerville', serif;
-    margin-bottom: 1rem;
 }
 
 .dresscode-text {
@@ -8803,22 +8788,34 @@ input, select, textarea {
 }
 
 .contact-section {
-    background-color: #f4f4f4; /* gris suave */
+    background-color: #e9ebee;
     padding: 4rem 2rem;
 }
 
-.banner.style1 .content{
+@media screen and (orientation: landscape) {
+    .banner.style1 .content{
+        width:58%;
+    }
 
-    width:58%;
+    .banner.style1 .image{
+        width:42%;
+    }
 }
 
 .banner.style1 .image{
-
-    width:42%;
+    position: relative;
 }
 
-.banner.style1 .image img {
-    object-position: center top;
+.banner.style1 .image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(18,23,44,0.45), rgba(18,23,44,0));
+    pointer-events: none;
+    z-index: 1;
 }
 
 .banner.style1 .image img {
@@ -8830,9 +8827,42 @@ input, select, textarea {
     letter-spacing: 2px;
 }
 
-.spotlight .content p {
+.spotlight .content .spotlight-text {
     max-width: 30rem;
     line-height: 1.9;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spotlight .content {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.parents-block {
+    margin: 1.5rem 0;
+}
+
+.parents-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: #12172c;
+    margin: 0;
+}
+
+.parents-ampersand {
+    display: block;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.5rem;
+    color: #4f6688;
+    margin: 0.15rem 0;
+}
+
+.spotlight.style1 .image img {
+    object-fit: contain;
+    background-color: #ffffff;
 }
 
 .hero-names span:first-child,
@@ -8841,16 +8871,27 @@ input, select, textarea {
 }
 
 .hero-names{
-
     font-family: "Pinyon Script", cursive !important;
     font-weight:400;
+    font-size:6.5rem;
+    line-height:1;
+    white-space: nowrap;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-.hero-names{
+.hero-names .ampersand {
+    font-size: 0.55em;
+    vertical-align: middle;
+    margin: 0 0.5rem;
+    opacity: 0.85;
+}
 
-    font-size:7rem;
-
-    line-height:1;
+@media screen and (max-width: 980px){
+    .hero-names {
+        font-size: 4.2rem;
+        white-space: normal;
+    }
 }
 
 
@@ -8860,15 +8901,15 @@ input, select, textarea {
 
     font-style:italic;
 
-    font-size:1.35rem;
+    font-size:1.1rem;
 
     line-height:1.9;
 
-    border-left:none;
+    border-left:1px solid rgba(237,241,247,0.35);
 
-    padding-left:0;
+    padding-left:1.5rem;
 
-    margin:2rem auto;
+    margin:1.5rem auto;
 
     max-width:650px;
 }
@@ -8878,6 +8919,14 @@ input, select, textarea {
     font-size:1rem;
 
     letter-spacing:6px;
+
+    text-align:center;
+
+    margin-top: 1.75rem;
+}
+
+.hero-content .actions.stacked {
+    text-align: center;
 }
 
 .hero-divider{
@@ -8887,7 +8936,7 @@ input, select, textarea {
 
     background:#7c8896;
 
-    margin:2.5rem auto 2rem auto;
+    margin:1.75rem auto 1.5rem auto;
 
     opacity:.7;
 }
@@ -8896,7 +8945,6 @@ input, select, textarea {
 
     min-height:100vh;
 
-    height:100vh;
 }
 
 .banner{
@@ -8916,12 +8964,6 @@ input, select, textarea {
     .banner.fullscreen{
 
         min-height:auto;
-        height:auto;
-    }
-
-    .hero-content{
-
-        padding:5rem 2rem;
     }
 
 }
@@ -8930,4 +8972,172 @@ input, select, textarea {
 
     margin-bottom:2rem;
     padding-top:2rem;
+
+}
+
+/* Paleta de colores del dress code (antes en style inline) */
+.color-1 { background: #000000; }
+.color-2 { background: #0a1938; }
+.color-3 { background: #272d45; }
+.color-4 { background: #2b3654; }
+.color-5 { background: #4f6688; }
+.color-6 { background: #566578; }
+.color-7 { background: #7c8896; }
+.color-8 { background: #9fa8b1; }
+
+/* Caja de agradecimiento del RSVP (antes en style inline) */
+.thank-you-box {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.thank-you-title {
+    letter-spacing: 2px;
+}
+
+.thank-you-text {
+    opacity: 0.8;
+}
+
+.rsvp-saludo {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+/* Fondo gris para Save the Date, Ubicación y RSVP */
+#first,
+.location-section,
+.rsvp-section {
+    background-color: #e9ebee;
+}
+
+/* Foto circular de acento en la sección Save the Date */
+.date-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 2rem auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.date-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Sección de contacto: texto a la izquierda, foto a la derecha */
+.contact-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.contact-text {
+    max-width: 24rem;
+}
+
+.contact-buttons {
+    justify-content: flex-start;
+}
+
+.contact-photo {
+    width: 220px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contact-photo img {
+    width: 100%;
+    display: block;
+}
+
+@media screen and (max-width: 736px) {
+    .contact-flex {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .contact-buttons {
+        justify-content: center;
+    }
+}
+
+/* Botones de contorno sobre fondos claros: tono navy en vez de gris claro para más contraste */
+.button:not(.primary):not(.hero-button) {
+    box-shadow: inset 0 0 0 1px rgba(18, 23, 44, 0.4);
+    color: #12172c !important;
+}
+
+.button:not(.primary):not(.hero-button):hover {
+    box-shadow: inset 0 0 0 1px #12172c;
+    background-color: rgba(18, 23, 44, 0.06);
+    color: #12172c !important;
+}
+
+.button:not(.primary):not(.hero-button):active {
+    box-shadow: inset 0 0 0 1px #12172c;
+    background-color: rgba(18, 23, 44, 0.12);
+    color: #12172c !important;
+}
+
+/* Botones "primary" (rellenos): navy en vez del gris/turquesa por defecto */
+.button.primary {
+    background-color: #12172c;
+    color: #ffffff !important;
+}
+
+.button.primary:hover {
+    background-color: #2b3654;
+}
+
+.button.primary:active {
+    background-color: #0a1938;
+}
+
+/* Marco decorativo alrededor del contenido del hero */
+.hero-content {
+    border: 1px solid rgba(237, 241, 247, 0.18);
+}
+
+.banner.style1 .hero-content {
+    padding: 4rem 3rem;
+}
+
+@media screen and (max-width: 980px){
+    .banner.style1 .hero-content {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Pequeño monograma decorativo */
+.hero-monogram {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    border: 1px solid rgba(237, 241, 247, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #edf1f7;
+    margin-bottom: 1.75rem;
+}
+
+/* Botón principal del hero: relleno suave al pasar el mouse */
+.hero-button:hover {
+    background-color: rgba(237, 241, 247, 0.08);
+    box-shadow: inset 0 0 0 1px #edf1f7 !important;
+    color: #edf1f7 !important;
 }

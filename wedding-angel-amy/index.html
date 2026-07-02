@@ -1,13 +1,12 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="es">
 	<head>
 		<title>Boda de Angel y Amy</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-		<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -23,7 +22,7 @@
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content hero-content">
 
-    <p class="hero-intro">Con la bendición de Dios y de nuestros padres...</p>
+    <div class="hero-monogram">A · A</div>
 
     <h1 class="hero-names">
         <span>Angel</span>
@@ -38,17 +37,17 @@
 <div class="hero-divider"></div>
 
 <blockquote class="hero-verse">
-...
-        “Nosotros amamos porque Él nos amó primero.”
+        “Ponme como un sello sobre tu corazón, como una marca sobre tu brazo; porque fuerte es como la muerte el amor.”
     </blockquote>
 
     <p class="hero-reference">
-        — 1 Juan 4:19 —
+        — Cantares 6:8 —
     </p>
 
     <ul class="actions stacked">
         <li>
-            <a href="#first"
+            <a href="#por-gracia"
+               onclick="startExperience(event)"
                class="button hero-button smooth-scroll-middle">
                 Ver Invitación
             </a>
@@ -61,12 +60,16 @@
 						</div>
 					</section>
 
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+					<section id="por-gracia" class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
     <div class="content">
-        <h2>By Grace</h2>
-        <p>
-            We are grateful for every step that led us here and for the God who faithfully guided our story. We can't wait to celebrate this new chapter with you.
-        </p>
+        <h2>Por Gracia</h2>
+        <p class="spotlight-text">Con la bendición de Dios y de nuestros padres</p>
+        <div class="parents-block">
+            <p class="parents-names">Danilo y Sonia Martínez</p>
+            <span class="parents-ampersand">&amp;</span>
+            <p class="parents-names">Jorge y Susan Hernández</p>
+        </div>
+        <p class="spotlight-text">tenemos el gozo de invitarles a acompañarnos en el comienzo de esta nueva historia como familia.</p>
     </div>
     <div class="image">
         <img src="images/sdd2.jpg" alt="Amy y Ángel">
@@ -99,6 +102,9 @@
 				<!-- Countdown -->
 				<section class="wrapper style1 align-center countdown-section onscroll-fade-in">
 					<div class="inner onscroll-fade-in">
+						<div class="date-photo">
+							<img src="images/gallery/thumbs/01.jpg" alt="Angel y Amy" />
+						</div>
 						<h2 class="sub-title">Nuestra boda comienza en...</h2>
 						<div id="countdown" class="countdown">
 							<div class="time-box">
@@ -124,7 +130,7 @@
 
 
 				<!-- Ubicación -->
-				<section class="wrapper style1 align-center onscroll-fade-in">
+				<section class="wrapper style1 align-center location-section onscroll-fade-in">
 					<div class="inner onscroll-fade-in">
 						<h2 class="sub-title">El lugar donde comenzará nuestra vida juntos</h2>
 						<br>
@@ -151,7 +157,7 @@
 					<!-- Dress Code -->
 					<section class="wrapper style1 align-center dresscode-section onscroll-fade-in">
 						<div class="inner onscroll-fade-in">
-							<h2 class="dresscode-title">Dress Code</h2>
+							<h2 class="sub-title">Dress Code</h2>
 
 							<p class="dresscode-text">
 								Te invitamos a vestir de manera <strong>elegante & formal</strong> para celebrar este día tan especial con nosotros.
@@ -162,14 +168,14 @@
 							</p>
 
 							<div class="color-palette">
-								<span class="color" style="background:#000000"></span>
-								<span class="color" style="background:#0a1938;"></span>
-								<span class="color" style="background:#272d45;"></span>
-								<span class="color" style="background:#2b3654;"></span>
-								<span class="color" style="background:#4f6688;"></span>
-								<span class="color" style="background:#566578;"></span>
-								<span class="color" style="background:#7c8896"></span>
-								<span class="color" style="background:#9fa8b1;"></span>
+								<span class="color color-1"></span>
+								<span class="color color-2"></span>
+								<span class="color color-3"></span>
+								<span class="color color-4"></span>
+								<span class="color color-5"></span>
+								<span class="color color-6"></span>
+								<span class="color color-7"></span>
+								<span class="color color-8"></span>
 							</div>
 
 							<p class="dresscode-note">
@@ -179,10 +185,11 @@
 					</section>
 
 					<!-- RSVP -->
-					<section class="wrapper style1 align-center onscroll-fade-in">
+					<section class="wrapper style1 align-center rsvp-section onscroll-fade-in">
 						<div class="inner onscroll-fade-in">
-							<h2>RSVP</h2>
+							<h2 class="sub-title">RSVP</h2>
 
+														<p id="rsvp-saludo" class="rsvp-saludo" style="display:none;"></p>
 							<p>Esta invitación ha sido reservada para <strong id="seats">4</strong> persona(s).</p>
 
 							<form id="rsvp-form">
@@ -203,85 +210,23 @@
 									Confirmar asistencia
 								</button>
 							</form>
-							<div id="thank-you" style="display:none; text-align:center; margin-top:30px;">
-							<h3 style="letter-spacing:2px;">GRACIAS POR CONFIRMAR</h3>
-							<p style="opacity:0.8;">Tu presencia es nuestro mejor regalo.</p>
+							<div id="thank-you" class="thank-you-box">
+							<h3 class="thank-you-title">GRACIAS POR CONFIRMAR</h3>
+							<p class="thank-you-text">Tu presencia es nuestro mejor regalo.</p>
 							</div>
 						</div>
 					</section>
 				
-						<!-- Gallery -->
-							<div class="gallery style2 medium lightbox onscroll-fade-in">
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-								<article>
-									<img src="images/gallery/thumbs/01.jpg" alt="" />
-									<div class="caption">
-										<p>Versiculo 1</p>
-									</div>
-								</article>
-							</div>
 
-					</section>
+
+
 
 
 				<!-- Regalos -->
-				<section class="wrapper style1 align-center">
+				<section class="wrapper style1 align-center regalos-section">
 					<div class="inner onscroll-fade-in">
 
-						<h2>Regalos</h2>
+						<h2 class="sub-title">Regalos</h2>
 
 						<p>
             				Su presencia en este día tan especial es el mejor regalo que podríamos recibir.<br><br>
@@ -319,23 +264,28 @@
 				
 
 				<!-- Contacto -->
-					<section class="wrapper style1 contact-section align-center onscroll-fade-in">
-						<div class="inner onscroll-fade-in">
-							<h3>¿Tienes dudas?</h3>
-							<p>Puedes contactarnos con gusto.</p>
+					<section class="wrapper style1 contact-section onscroll-fade-in">
+						<div class="inner onscroll-fade-in contact-flex">
+							<div class="contact-text">
+								<h3 class="sub-title">¿Tienes dudas?</h3>
+								<p>Puedes contactarnos con gusto.</p>
 
-							<div class="contact-buttons">
-								<a href="https://wa.me/56362516?text=Hola%20tengo%20una%20duda%20sobre%20la%20boda!" 
-								target="_blank" 
-								class="button small primary">
-								<i class="icon brands fa-whatsapp"></i> Amy
-								</a>
+								<div class="contact-buttons">
+									<a href="https://wa.me/56362516?text=Hola%20tengo%20una%20duda%20sobre%20la%20boda!" 
+									target="_blank" 
+									class="button small primary">
+									<i class="icon brands fa-whatsapp"></i> Amy
+									</a>
 
-								<a href="https://wa.me/57635644?text=Hola%20tengo%20una%20duda%20sobre%20la%20boda!" 
-								target="_blank" 
-								class="button small primary">
-								<i class="icon brands fa-whatsapp"></i> Angel
-								</a>
+									<a href="https://wa.me/57635644?text=Hola%20tengo%20una%20duda%20sobre%20la%20boda!" 
+									target="_blank" 
+									class="button small primary">
+									<i class="icon brands fa-whatsapp"></i> Angel
+									</a>
+								</div>
+							</div>
+							<div class="contact-photo">
+								<img src="images/gallery/thumbs/01.jpg" alt="Angel y Amy" />
 							</div>
 						</div>
 					</section>
@@ -352,106 +302,134 @@
 			<script src="assets/js/main.js"></script>
 
 
-			<!-- Música -->
-			<script>
+		<!-- Música: reproduce la canción y baja a la sección de fecha -->
+		<script>
 			function startExperience(event) {
-			event.preventDefault();
+				event.preventDefault();
 
-			const song = document.getElementById("weddingSong");
-			song.play();
+				const song = document.getElementById("weddingSong");
+				song.play();
 
-			document.querySelector('#first').scrollIntoView({
-				behavior: 'smooth'
-			});
-		}
-			</script>
+				document.querySelector('#por-gracia').scrollIntoView({
+					behavior: 'smooth'
+				});
+			}
+		</script>
 
+		<!-- Conteo regresivo -->
+		<script>
+			const weddingDate = new Date("Nov 22, 2026 00:00:00").getTime();
 
-			<!-- Conteo regresivo -->
-			<script>
-				const weddingDate = new Date("Nov 22, 2026 00:00:00").getTime();
+			setInterval(function() {
+				const now = new Date().getTime();
+				const distance = weddingDate - now;
 
-				setInterval(function() {
-					const now = new Date().getTime();
-					const distance = weddingDate - now;
+				if (distance <= 0) {
+					document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+					document.getElementById("countdown-message").innerText = "Gracias por ser parte de nuestra historia ♡";
+					return;
+				}
 
-					if (distance <= 0) {
-						document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
-						document.getElementById("countdown-message").innerText = "Gracias por ser parte de nuestra historia ♡";
-						return;
-					}
+				const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+				const minutes = Math.floor((distance / (1000 * 60)) % 60);
+				const seconds = Math.floor((distance / 1000) % 60);
 
-					const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-					const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-					const minutes = Math.floor((distance / (1000 * 60)) % 60);
-					const seconds = Math.floor((distance / 1000) % 60);
+				document.getElementById("days").innerText = days;
+				document.getElementById("hours").innerText = hours;
+				document.getElementById("minutes").innerText = minutes;
+				document.getElementById("seconds").innerText = seconds;
 
-					document.getElementById("days").innerText = days;
-					document.getElementById("hours").innerText = hours;
-					document.getElementById("minutes").innerText = minutes;
-					document.getElementById("seconds").innerText = seconds;
+				document.getElementById("countdown-message").innerText =
+					"Contando los días para celebrar nuestro amor ♡";
 
-					document.getElementById("countdown-message").innerText =
-						"Contando los días para celebrar nuestro amor ♡";
+			}, 1000);
+		</script>
 
-				}, 1000);
-			</script>
+		<!-- Cantidad de invitados por RSVP (según el enlace ?rsvp=) -->
+		<script>
+			const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqhJdUTlt2XJfE5N0zF65Lbh-_t6SDPDvENMgmNZa_zVRCYBy6V2Z7oBlwqEmr4Bo/exec";
 
-
-			<!-- Cantidad de invitados por RSVP -->
-			<script>
 			const urlParams = new URLSearchParams(window.location.search);
-			const guestGroup = urlParams.get('rsvp');
+			const guestGroup = (urlParams.get('rsvp') || '').trim().toLowerCase();
 
-			// Simulación (luego puedes hacerlo real)
-			const guestData = {
+			// Respaldo por si el enlace no tiene ?rsvp= o el Apps Script aún no responde
+			const guestDataRespaldo = {
 				"familia-perez": 4,
 				"ana": 2,
 				"carlos": 1
 			};
 
-			const seats = guestData[guestGroup] || 1;
+			function pintarOpciones(seats, nombre) {
+				document.getElementById("seats").innerText = seats;
 
-			document.getElementById("seats").innerText = seats;
+				if (nombre) {
+					const saludo = document.getElementById("rsvp-saludo");
+					if (saludo) {
+						saludo.innerText = `Hola ${nombre},`;
+						saludo.style.display = "block";
+					}
+				}
 
-			// Generar opciones dinámicas
-			const select = document.getElementById("guestCount");
-			select.innerHTML = `<option value="0">No podremos asistir</option>`;
-
-			for (let i = 1; i <= seats; i++) {
-				select.innerHTML += `<option value="${i}">${i} persona(s)</option>`;
+				const select = document.getElementById("guestCount");
+				select.innerHTML = `<option value="0">No podremos asistir</option>`;
+				for (let i = 1; i <= seats; i++) {
+					select.innerHTML += `<option value="${i}">${i} persona(s)</option>`;
+				}
 			}
-			</script>
 
+			async function cargarInvitado() {
+				if (!guestGroup) {
+					pintarOpciones(1, null);
+					return;
+				}
 
-<!-- Registrar RSVP -->
-<script>
-document.getElementById("rsvp-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+				try {
+					const res = await fetch(`${APPS_SCRIPT_URL}?slug=${encodeURIComponent(guestGroup)}`);
+					const data = await res.json();
 
-    const guestGroup = new URLSearchParams(window.location.search).get('rsvp');
-    const guests = document.getElementById("guestCount").value;
-    const attending = document.getElementById("attendance").value;
+					if (data.found) {
+						pintarOpciones(Number(data.asientos) || 1, data.nombre);
+						return;
+					}
+				} catch (err) {
+					console.error("No se pudo cargar la información del invitado, usando respaldo:", err);
+				}
 
-    const data = new URLSearchParams();
-    data.append("group", guestGroup);
-    data.append("guests", guests);
-    data.append("attending", attending);
+				// Respaldo si el slug no está en la hoja o falló la conexión
+				pintarOpciones(guestDataRespaldo[guestGroup] || 1, null);
+			}
 
-    fetch("https://script.google.com/macros/s/AKfycbyqhJdUTlt2XJfE5N0zF65Lbh-_t6SDPDvENMgmNZa_zVRCYBy6V2Z7oBlwqEmr4Bo/exec", {
-        method: "POST",
-        mode: "no-cors",
-        body: data
-    });
+			cargarInvitado();
+		</script>
 
-    // UX bonito 💅
-    document.getElementById("rsvp-form").style.display = "none";
-    document.getElementById("thank-you").style.display = "block";
-});
-</script>
+		<!-- Registrar RSVP -->
+		<script>
+			document.getElementById("rsvp-form").addEventListener("submit", function(e) {
+				e.preventDefault();
 
-			<audio id="weddingSong">
-  				<source src="audio/song.mp3" type="audio/mpeg">
-			</audio>
+				const guests = document.getElementById("guestCount").value;
+				const attending = Number(guests) > 0 ? "si" : "no";
+
+				const data = new URLSearchParams();
+				data.append("group", guestGroup);
+				data.append("guests", guests);
+				data.append("attending", attending);
+
+				fetch(APPS_SCRIPT_URL, {
+					method: "POST",
+					mode: "no-cors",
+					body: data
+				});
+
+				// UX bonito 💅
+				document.getElementById("rsvp-form").style.display = "none";
+				document.getElementById("thank-you").style.display = "block";
+			});
+		</script>
+
+		<audio id="weddingSong">
+			<source src="audio/song.mp3" type="audio/mpeg">
+		</audio>
 	</body>
 </html>
