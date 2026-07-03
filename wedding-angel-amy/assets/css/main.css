@@ -9010,6 +9010,14 @@ input, select, textarea {
     opacity: 0.8;
 }
 
+/* Iconos sutiles junto a Ceremonia y Recepción */
+#first .items h3 .icon {
+    color: #7c8896;
+    font-size: 0.85em;
+    margin-right: 0.5rem;
+    font-weight: 400;
+}
+
 .rsvp-saludo {
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -9125,6 +9133,10 @@ input, select, textarea {
 }
 
 /* Marco decorativo alrededor del contenido del hero */
+html {
+    scroll-behavior: smooth !important;
+}
+
 .hero-content {
     border: 1px solid rgba(237, 241, 247, 0.18);
 }

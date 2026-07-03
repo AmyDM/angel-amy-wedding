@@ -5,6 +5,10 @@
 		<title>Boda de Angel y Amy</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +52,7 @@
         <li>
             <a href="#por-gracia"
                onclick="startExperience(event)"
-               class="button hero-button smooth-scroll-middle">
+               class="button hero-button">
                 Ver Invitación
             </a>
         </li>
@@ -62,7 +66,7 @@
 
 					<section id="por-gracia" class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
     <div class="content">
-        <h2>Nuestra Historia Comienza</h2>
+        <h2>Por Gracia</h2>
         <p class="spotlight-text">Con la bendición de Dios y de nuestros padres</p>
         <div class="parents-block">
             <p class="parents-names">Danilo y Sonia Martínez</p>
@@ -89,9 +93,9 @@
 								<h3>22 de Noviembre de 2026</h3>
 							</section>
 							<section>
-								<h3>Ceremonia</h3>
+								<h3><i class="icon solid fa-church"></i> Ceremonia</h3>
 								<h4>3:30 PM</h4>
-								<h3>Recepción</h3>
+								<h3><i class="icon solid fa-glass-cheers"></i> Recepción</h3>
 								<h4>5:00 PM</h4>
 							</section>
 						</div>
@@ -195,14 +199,7 @@
 							<form id="rsvp-form">
 								<label>¿Cuántos asistirán?</label>
 								<select id="guestCount" required>
-									<option value="" disabled selected>Selecciona una opción</option>
-									<option value="0">No podremos asistir</option>
-									<option value="1">1 persona</option>
-									<option value="2">2 personas</option>
-									<option value="3">3 personas</option>
-									<option value="4">4 personas</option>
-									<option value="5">5 personas</option>
-									<option value="6">6 personas</option>
+									<option value="" disabled selected>Cargando opciones...</option>
 								</select>
 
 								<br><br>
@@ -305,15 +302,40 @@
 
 		<!-- Música: reproduce la canción y baja a la sección de fecha -->
 		<script>
+			function smoothScrollTo(targetY, duration) {
+				const startY = window.pageYOffset;
+				const distance = targetY - startY;
+				const startTime = performance.now();
+
+				function easeOutQuint(t) {
+					return 1 - Math.pow(1 - t, 5);
+				}
+
+				function step(currentTime) {
+					const elapsed = currentTime - startTime;
+					const progress = Math.min(elapsed / duration, 1);
+					const eased = easeOutQuint(progress);
+
+					window.scrollTo({ top: startY + distance * eased, behavior: 'auto' });
+
+					if (progress < 1) {
+						requestAnimationFrame(step);
+					}
+				}
+
+				requestAnimationFrame(step);
+			}
+
 			function startExperience(event) {
 				event.preventDefault();
 
 				const song = document.getElementById("weddingSong");
 				song.play();
 
-				document.querySelector('#por-gracia').scrollIntoView({
-					behavior: 'smooth'
-				});
+				const target = document.querySelector('#por-gracia');
+				const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+				smoothScrollTo(targetPosition, 1600);
 			}
 		</script>
 
