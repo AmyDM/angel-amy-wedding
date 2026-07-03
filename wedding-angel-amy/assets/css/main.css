@@ -8914,7 +8914,7 @@ input, select, textarea {
 
     padding-left:1.5rem;
 
-    margin:1.5rem auto;
+    margin:1.1rem auto;
 
     max-width:650px;
 }
@@ -8927,7 +8927,7 @@ input, select, textarea {
 
     text-align:center;
 
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
 }
 
 .hero-content .actions.stacked {
@@ -8941,7 +8941,7 @@ input, select, textarea {
 
     background:#7c8896;
 
-    margin:1.75rem auto 1.5rem auto;
+    margin:1.25rem auto 1.1rem auto;
 
     opacity:.7;
 }
@@ -9130,7 +9130,7 @@ input, select, textarea {
 }
 
 .banner.style1 .hero-content {
-    padding: 4rem 3rem;
+    padding: 2.75rem 3rem;
 }
 
 @media screen and (max-width: 980px){
@@ -9153,7 +9153,7 @@ input, select, textarea {
     font-size: 0.85rem;
     letter-spacing: 2px;
     color: #edf1f7;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
 }
 
 /* Botón principal del hero: relleno suave al pasar el mouse */
