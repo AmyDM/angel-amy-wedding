@@ -8851,7 +8851,7 @@ input, select, textarea {
 
 .parents-names {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
     font-size: 1.1rem;
     color: #12172c;
@@ -9008,6 +9008,82 @@ input, select, textarea {
 
 .thank-you-text {
     opacity: 0.8;
+}
+
+/* Nombre del lugar destacado en la sección de ubicación */
+.location-highlight {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #12172c;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+.location-highlight::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: #7c8896;
+}
+
+/* Líneas decorativas alrededor de los nombres de los padres */
+.parents-divider {
+    width: 50px;
+    height: 1px;
+    background: #7c8896;
+    opacity: 0.5;
+    margin: 0.85rem auto;
+}
+
+/* Tarjeta de datos bancarios en la sección de Regalos */
+.bank-card {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1.75rem 2.5rem;
+    border: 1px solid rgba(18, 23, 44, 0.15);
+    border-radius: 10px;
+    background: #fafafa;
+    text-align: center;
+}
+
+.bank-name {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0 0 0.15rem 0;
+}
+
+/* Centrar verticalmente el contenido de cada columna en Regalos */
+.regalos-section .items.style1 > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bank-detail {
+    color: #566578;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.bank-number {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.bank-owners {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #566578;
+    margin: 0.75rem 0 0 0;
 }
 
 /* Iconos sutiles junto a Ceremonia y Recepción */
